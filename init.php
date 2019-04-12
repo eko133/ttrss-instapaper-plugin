@@ -37,7 +37,7 @@ class Instapaper extends Plugin
     {
         $article_id = $line['id'];
 
-        $rv = "<img src=\"plugins/instapaper/instapaper.png\"
+        $rv = "<img src=\"plugins.local/instapaper/instapaper.png\"
                 class='tagsPic' style=\"cursor : pointer\"
             onclick=\"shareArticleToInstapaper($article_id)\"
             title='".__('Read it Later')."'>";

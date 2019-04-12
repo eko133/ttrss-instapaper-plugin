@@ -1,6 +1,6 @@
 function shareArticleToInstapaper(id) {
     try {
-        var query = "?op=pluginhandler&plugin=instapaper&method=getInfo&id=" + param_escape(id);
+        var query = "?op=pluginhandler&plugin=instapaper&method=getInfo&id=" + encodeURIComponent(id);
 
         console.log(query);
 
@@ -15,7 +15,7 @@ function shareArticleToInstapaper(id) {
             onComplete: function(transport) {
                 var ti = JSON.parse(transport.responseText);
 
-                var share_url = "http://www.instapaper.com/hello2?" + "url=" + param_escape(ti.link) + "&title=" + param_escape(ti.title);
+                var share_url = "http://www.instapaper.com/hello2?" + "url=" + encodeURIComponent(ti.link) + "&title=" + encodeURIComponent(ti.title);
 
                 w.location.href = share_url;
 
@@ -25,4 +25,3 @@ function shareArticleToInstapaper(id) {
         exception_error("shareArticleToInstapaper", e);
     }
 }
-
